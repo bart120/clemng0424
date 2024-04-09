@@ -1,1 +1,27 @@
-<p>login works!</p>
+<h1>Connexion</h1>
+
+<form>
+    <div>
+        <mat-form-field>
+            <mat-label>Mail</mat-label>
+            <input matInput #login (keyup.enter)="password.focus()">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Mot de passe</mat-label>
+            <input matInput type="password" #password>
+        </mat-form-field>
+
+        <ng-template [ngIf]="password.value.length > 0">
+            <div *ngIf="password.value.length < 6; else passok">
+                Le mot de passe doit contenir 6 caractères
+            </div>
+        </ng-template>
+        <ng-template #passok>
+            <div>BRAVO !!!!!</div>
+        </ng-template>
+
+    </div>
+    <button mat-button type="button" (click)="onLogin(login.value)">Se connecter</button>
+</form>
