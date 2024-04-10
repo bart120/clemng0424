@@ -8,7 +8,7 @@ import { MasterModule } from './pages/master/master.module';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule, VariableModule, MasterModule],
+  imports: [RouterOutlet, SharedModule, MasterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
