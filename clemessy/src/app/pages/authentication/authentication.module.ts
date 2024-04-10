@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../../core/material.module';
 import { MaterialFormModule } from '../../core/material-form.module';
+//import { AuthenticationService } from '../../core/services/authentication.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent }
@@ -18,6 +19,10 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MaterialModule,
     MaterialFormModule
+  ],
+  providers: [
+    //AuthenticationService
+
   ]
 })
 export class AuthenticationModule { }
