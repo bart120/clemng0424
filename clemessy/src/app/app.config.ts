@@ -3,12 +3,18 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { tokenInterceptor } from './core/interceptors/token.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideHttpClient() // <= 16 import HttpClientModule dans App.module.ts
+    provideHttpClient(withInterceptors([tokenInterceptor])), // v17
+
+
+    //{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor } v16
+
+
   ]
 };

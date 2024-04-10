@@ -3,5 +3,20 @@
     <a mat-button routerLink="/home">Home</a>
     <a mat-button routerLink="/variable/list">Variables</a>
     <a mat-button routerLink="/variable/add">Ajouter une var</a>
-    <a mat-button routerLink="/auth/login">Connexion</a>
+
+
+    <span *ngIf="user?.isConnected; else connexion">Bonjour {{user?.name}}</span>
+    <ng-template #connexion>
+        <a mat-button routerLink="/auth/login">Connexion</a>
+    </ng-template>
+    <!--
+    <ng-container *ngIf="user; then thenTemplate; else elseTemplate"></ng-container>
+    <ng-template #thenTemplate>
+        <span>Bonjour {{user?.name}}</span>
+    </ng-template>
+    <ng-template #elseTemplate>
+        <a mat-button routerLink="/auth/login">Connexion</a>
+    </ng-template>
+-->
+
 </mat-toolbar>

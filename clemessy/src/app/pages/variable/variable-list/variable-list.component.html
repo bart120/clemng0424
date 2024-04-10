@@ -1,1 +1,9 @@
-<p>variable-list works!</p>
+<h1>Variables</h1>
+
+<ul>
+    <li *ngFor="let v of variables">
+        <p *ngIf="v.active">
+            {{v.mnemonic1}} - {{v.label}}
+        </p>
+    </li>
+</ul>
