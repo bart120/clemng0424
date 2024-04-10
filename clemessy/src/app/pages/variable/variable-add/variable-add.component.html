@@ -1,1 +1,23 @@
-<p>variable-add works!</p>
+<h1>Ajouter une variable</h1>
+
+<form [formGroup]="maForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field>
+            <mat-label>mnemonic1</mat-label>
+            <input matInput formControlName="mnemonic1">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Label</mat-label>
+            <input matInput formControlName="label">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>domainId</mat-label>
+            <input matInput type="number" formControlName="domain">
+        </mat-form-field>
+    </div>
+    <button type="submit" mat-button>Enregistrer</button>
+</form>

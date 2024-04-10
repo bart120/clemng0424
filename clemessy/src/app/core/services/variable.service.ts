@@ -15,4 +15,9 @@ export class VariableService {
         return this.http.get<Array<VariableModel>>(environment.VAR_URL).pipe(map((x: any) => x.data));
     }
 
+    save(v: VariableModel): Observable<VariableModel> {
+        //console.log(v);
+        return this.http.post<VariableModel>(environment.VAR_URL, v);
+    }
+
 }

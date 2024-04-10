@@ -6,6 +6,7 @@
 
 
     <span *ngIf="user?.isConnected; else connexion">Bonjour {{user?.name}}</span>
+    <button mat-button (click)="logout()">Se déconnecter</button>
     <ng-template #connexion>
         <a mat-button routerLink="/auth/login">Connexion</a>
     </ng-template>

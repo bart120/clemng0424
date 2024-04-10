@@ -7,6 +7,8 @@ import { VariableComponent } from './variable/variable.component';
 import { RouterModule } from '@angular/router';
 import { VariableRoutingModule } from './variable-routing.module';
 import { MaterialFormModule } from '../../core/material-form.module';
+import { MaterialModule } from '../../core/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +24,9 @@ import { MaterialFormModule } from '../../core/material-form.module';
   imports: [
     CommonModule,
     VariableRoutingModule,
-    MaterialFormModule
+    MaterialModule,
+    MaterialFormModule,
+    ReactiveFormsModule
   ]
 })
 export class VariableModule { }
